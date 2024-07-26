@@ -2,12 +2,6 @@
   "version": 2,
   "dependencies": {
     "net8.0": {
-      "Fable.Core": {
-        "type": "Direct",
-        "requested": "[4.3.0, )",
-        "resolved": "4.3.0",
-        "contentHash": "sbK+hYs7H7I3b3sbgttI4GlvQfNPcIqSz1qPSagF3QbVA46KJ/pWSXC/Dwv0s9M6AeRGmoqcIeD7GUaLn41zkA=="
-      },
       "Feliz": {
         "type": "Direct",
         "requested": "[2.7.0, )",
@@ -17,17 +11,6 @@
           "FSharp.Core": "4.7.2",
           "Fable.ReactDom.Types": "18.2.0",
           "Feliz.CompilerPlugins": "2.2.0"
-        }
-      },
-      "Feliz.Router": {
-        "type": "Direct",
-        "requested": "[4.0.0, )",
-        "resolved": "4.0.0",
-        "contentHash": "al1c1BJgmobZ1U5bWRVrPe/TXRJAV70uslBGRT3yKgpf7dl7E/XWZhAZWpKhu4pPuvpH0rjHhPnj15r80QCSMQ==",
-        "dependencies": {
-          "FSharp.Core": "4.7.2",
-          "Fable.Elmish": "4.0.0",
-          "Feliz": "2.3.0"
         }
       },
       "FSharp.Analyzers.Build": {
@@ -103,15 +86,6 @@
           "Fable.Core": "3.0.0"
         }
       },
-      "Fable.Elmish": {
-        "type": "Transitive",
-        "resolved": "4.0.0",
-        "contentHash": "F7yJFmXWmg0EYfAstxNWdei1SJB+Q83pCxxGlfmLJ7uxIiYd6CbRjaHDBxC0SmHeT1E4kbjHCTFys2HHg90oow==",
-        "dependencies": {
-          "FSharp.Core": "4.7.2",
-          "Fable.Core": "3.7.1"
-        }
-      },
       "Fable.React.Types": {
         "type": "Transitive",
         "resolved": "18.3.0",
@@ -140,10 +114,13 @@
           "Fable.AST": "4.2.1"
         }
       },
-      "fs.fluentui": {
-        "type": "Project",
+      "Fable.Core": {
+        "type": "CentralTransitive",
+        "requested": "[4.3.0, )",
+        "resolved": "3.2.7",
+        "contentHash": "XYvisWEqzYap+9USQGRyI4F9DmZY5EE3STMiwnvlSrwoqHmZRPHyQR3Rp2oGv/mpzNy7PViKdgCiKC/eviG2Ng==",
         "dependencies": {
-          "Feliz": "[2.7.0, )"
+          "FSharp.Core": "4.7.2"
         }
       },
       "FSharp.Core": {

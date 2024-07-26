@@ -11,6 +11,9 @@
       <PackageReference Include="Fable.Core" />
       <PackageReference Include="Feliz" />
       <PackageReference Include="Feliz.Router" />
-      <PackageReference Include="FS.FluentUI" />
+<!--      <PackageReference Include="FS.FluentUI" />-->
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="FS.FluentUI\FS.FluentUI.fsproj" />
     </ItemGroup>
 </Project>

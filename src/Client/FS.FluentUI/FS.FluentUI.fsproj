@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Version>1.15.1</Version>
+        <Authors>Andrew Sutton</Authors>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>V9 of Microsoft's FluentUI library, built for F# in the style of Feliz.</Description>
+        <PackageProjectUrl>https://github.com/sydsutton/FS.FluentUI</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>F# FSharp FS FluentUI Feliz Fable dotnet .NET</PackageTags>
+        <PackageReleaseNotes>
+            - Update @fluentui/react-components to 9.54.2
+            - Add createMotionComponent function
+            - Add virtualized DataGrid component
+            - Add @fluentui-contrib/react-data-grid-react-window package for virtualized data grids
+            - Update @fluentui/react-datepicker-compat to 0.4.41
+            - Update @fluentui/react-calendar-compat to 0.1.11
+            - Update @fluentui/react-timepicker-compat to 0.2.19
+        </PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+        <Compile Include="Domain.fs" />
+        <Compile Include="Utils.fs" />
+        <Compile Include="FelizProps.fs" />
+        <Compile Include="Props.fs" />
+        <Compile Include="Props2.fs" />
+        <Compile Include="FluentUI.fs" />
+        <Compile Include="BundleIcons.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="*.fsproj; *.fs; *.js" Exclude="**\*.fs.js" PackagePath="fable\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Update="FSharp.Core"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Feliz"/>
+    </ItemGroup>
+
+<!--    <PropertyGroup>-->
+<!--        <NpmDependencies>-->
+<!--            <NpmPackage Name="@fluentui/react-components" Version="gte 9.54.2" ResolutionStrategy="Max" />-->
+<!--            <NpmPackage Name="@fluentui/react-datepicker-compat" Version="gte 0.4.41" ResolutionStrategy="Max" />-->
+<!--            <NpmPackage Name="@fluentui/react-calendar-compat" Version="gte 0.1.11" ResolutionStrategy="Max" />-->
+<!--            <NpmPackage Name="@fluentui/react-timepicker-compat" Version="gte 0.2.19" ResolutionStrategy="Max" />-->
+<!--            <NpmPackage Name="@fluentui-contrib/react-data-grid-react-window" Version="gte 1.2.0" ResolutionStrategy="Max" />-->
+<!--        </NpmDependencies>-->
+<!--    </PropertyGroup>-->
+
+</Project>

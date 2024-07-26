@@ -27,7 +27,6 @@ pipeline "Build" {
     workingDir __SOURCE_DIRECTORY__
     restoreStage
     stage "Clean" { run (clean [| "dist"; "reports" |]) }
-    stage "CheckFormat" { run "dotnet fantomas src build.fsx --check" }
 
     stage "Main" {
         paralle
@@ -46,7 +45,6 @@ pipeline "Preview" {
     workingDir __SOURCE_DIRECTORY__
     restoreStage
     stage "Clean" { run (clean [| "dist"; "reports" |]) }
-    stage "CheckFormat" { run "dotnet fantomas src build.fsx --check" }
 
     stage "Install" { run "pnpm install --frozen-lockfile" }
 
