@@ -66,6 +66,7 @@ pipeline "Preview" {
 pipeline "Watch" {
     workingDir __SOURCE_DIRECTORY__
     stage "Clean" { run (clean [| "dist"; "reports" |]) }
+    stage "Install" { run "pnpm install --frozen-lockfile" }
 
     stage "Main" {
         run "dotnet tool restore"
@@ -73,8 +74,7 @@ pipeline "Watch" {
 
         stage "Client" {
             workingDir "src/Client"
-            run "bun i --frozen-lockfile"
-            run "bunx --bun vite"
+            run "dotnet fable watch -s -o .build --verbose --run vite -c ../../vite.config.js"
         }
     }
 
