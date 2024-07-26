@@ -6,6 +6,7 @@ This is a simple web application template using FS.FluentUI.
 
 * [Dotnet SDK](https://www.microsoft.com/net/download/core) 8.0 or higher
 * [Node.js](https://nodejs.org) 18 or higher
+* pnpm
 * An F# editor like [JetBrains Rider](https://www.jetbrains.com/rider/), Visual Studio and Visual Studio Code with [Ionide](http://ionide.io/).
 
 Or you can use the [VS Code Remote Container](https://code.visualstudio.com/docs/remote/containers?WT.mc_id=dotnet-33392-aapowell) for development, as it will set up all the required dependencies.
@@ -15,7 +16,6 @@ Or you can use the [VS Code Remote Container](https://code.visualstudio.com/docs
 ### Client
 
 * [Fable](https://fable.io/) for F# to JavaScript compilation.
-* RPC routing with [Fable.Remoting](https://zaid-ajaj.github.io/Fable.Remoting/#/client-setup/fable).
 * Styling with [Fluent UI](https://github.com/sydsutton/FS.FluentUI).
 * Shared client-server types.
 
@@ -28,8 +28,7 @@ dotnet tool restore
 dotnet restore
 ```
 
-Afterward, you can run the default build script. This will build the solution, including
-both the server and the client:
+Afterward, you can run the default build script. This will build the project.
 
 ```console
 dotnet fsi build.fsx
