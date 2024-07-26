@@ -10,13 +10,12 @@
     "@fluentui/react-search-preview": "^0.1.44",
     "@fluentui/react-teaching-popover-preview": "^0.2.0",
     "@fluentui/react-timepicker-compat": "^0.2.0",
+    "@fluentui/react-icons": "^2.0.247",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "5.2.4",
-    "vite-plugin-fable": "^0.0.26"
-  },
-  "trustedDependencies": ["vite-plugin-fable"]
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^4.5.3"
+  }
 }

@@ -1,0 +1,5 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AApp_002Efs_002Fl_003Asrc_003FClient_003FApp_002Efs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:Boolean x:Key="/Default/Environment/Hierarchy/Build/BuildTool/RecentDotNetCliExePaths/=_002Fnix_002Fstore_002Fg0l1sx6znj8a3zyapdz56gkyahihhdpf_002Ddotnet_002Dsdk_002D8_002E0_002E201_002Fdotnet/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/DotNetCliExePath/@EntryValue">/nix/store/g0l1sx6znj8a3zyapdz56gkyahihhdpf-dotnet-sdk-8.0.201/dotnet</s:String>
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">/nix/store/g0l1sx6znj8a3zyapdz56gkyahihhdpf-dotnet-sdk-8.0.201/sdk/8.0.201/MSBuild.dll</s:String></wpf:ResourceDictionary>

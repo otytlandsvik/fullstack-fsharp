@@ -5,9 +5,6 @@
     </PropertyGroup>
     <ItemGroup>
       <None Include="index.html" />
-      <None Include="package.json" />
-      <None Include="vite.config.js" />
-      <Compile Include="../Shared/Shared.fs" />
       <Compile Include="App.fs" />
     </ItemGroup>
     <ItemGroup>

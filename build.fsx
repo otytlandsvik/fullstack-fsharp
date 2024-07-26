@@ -34,17 +34,35 @@ pipeline "Build" {
 
         stage "Client" {
             workingDir "src/Client"
-            run "bun i --frozen-lockfile"
-            run "bunx --bun vite build"
-        }
-
-        stage "Server" {
-            workingDir "src/Server"
-            run $"dotnet publish -c Release -o %s{deployDir} -tl"
+            run "pnpm install --frozen-lockfile"
+            run "dotnet fable -o .build --run vite preview -c vite.config.js"
         }
     }
 
-    runIfOnlySpecified false
+    runIfOnlySpecified true
+}
+
+pipeline "Preview" {
+    workingDir __SOURCE_DIRECTORY__
+    restoreStage
+    stage "Clean" { run (clean [| "dist"; "reports" |]) }
+    stage "CheckFormat" { run "dotnet fantomas src build.fsx --check" }
+
+    stage "Install" { run "pnpm install --frozen-lockfile" }
+
+
+    stage "Build" {
+        workingDir "src/Client"
+        run "dotnet fable -s -o .build --run vite build -c ../../vite.config.js"
+    }
+
+    stage "Preview" {
+        workingDir "src/Client"
+        run "dotnet fable -s -o .build --run vite preview -c ../../vite.config.js"
+    }
+
+
+    runIfOnlySpecified true
 }
 
 pipeline "Watch" {
@@ -60,24 +78,6 @@ pipeline "Watch" {
             run "bun i --frozen-lockfile"
             run "bunx --bun vite"
         }
-
-        stage "Server" {
-            workingDir "src/Server"
-            run "dotnet watch run -tl"
-        }
-    }
-
-    runIfOnlySpecified true
-}
-
-pipeline "Server" {
-    workingDir __SOURCE_DIRECTORY__
-    stage "Clean" { run (clean [| "dist"; "reports" |]) }
-    restoreStage
-
-    stage "Server" {
-        workingDir "src/Server"
-        run "dotnet watch run -tl"
     }
 
     runIfOnlySpecified true
@@ -114,11 +114,7 @@ pipeline "Sign" {
     workingDir __SOURCE_DIRECTORY__
     stage "Restore" { run "dotnet tool restore" }
 
-    stage "Main" {
-        // NOTE: Could this be parallelized?
-        run "dotnet telplin src/Server/Server.fsproj -- /p:Configuration=Release"
-        run "dotnet telplin src/Client/Client.fsproj -- /p:Configuration=Release"
-    }
+    stage "Main" { run "dotnet telplin src/Client/Client.fsproj -- /p:Configuration=Release" }
 
     runIfOnlySpecified true
 }
